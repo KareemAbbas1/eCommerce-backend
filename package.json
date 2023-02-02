@@ -1,0 +1,20 @@
+{
+  "name": "e-commerce-backend",
+  "version": "1.0.0",
+  "description": "REST API for MERN e-Commerce application",
+  "main": "server.js",
+  "scripts": {
+    "start":"node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Kareem Abbas",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
