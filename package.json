@@ -4,7 +4,7 @@
   "description": "REST API for MERN e-Commerce application",
   "main": "server.js",
   "scripts": {
-    "start":"node server.js",
+    "start": "node server.js",
     "server": "nodemon server.js"
   },
   "author": "Kareem Abbas",
@@ -12,6 +12,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
     "mongoose": "^6.9.0"
   },
   "devDependencies": {
