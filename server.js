@@ -2,7 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const { errorHandler } = require("./middleware/errorMiddleware")
+const { errorHandler } = require("./middleware/errorMiddleware");
 
 // Routes Imports
 const productsRoute = require("./routes/products.js");
@@ -18,6 +18,7 @@ const app = express();
 
 // Use body parser middleware
 app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
 
 
 /* End intialize server */
