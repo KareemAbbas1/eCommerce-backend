@@ -6,8 +6,10 @@ const {
     getProductById,
     createNewProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    seedingDb
  } = require('../controllers/productsController');
+ const { adminProtect } = require("../middleware/authMiddleware");
 
 
 
@@ -20,17 +22,24 @@ router.get("/:id", getProductById);
 
 
 // create new product
-router.post("/", createNewProduct);
+router.post("/", adminProtect, createNewProduct);
 
 
 // update product
-router.patch("/:id", updateProduct);
+router.patch("/:id", adminProtect, updateProduct);
 
 
 // delete product
-router.delete("/:id", deleteProduct);
+router.delete("/:id", adminProtect, deleteProduct);
 
 
+
+
+
+
+
+// seeding
+router.post("/seed", adminProtect, seedingDb);
 /*
 Additionally, we can use the following approach for a cleaner code
 use the route() func from express if we're calling multipule controllers on the same route and chain the controllers on the that route

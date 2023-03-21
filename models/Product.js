@@ -10,10 +10,15 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    color: {
-        type: String,
+    colors: {
+        type: Array,
         required: true
     },
+    sizes: {
+        type: Array,
+        required: true
+    },
+    categories: { type: Array },
     brand: {
         type: String,
         required: true
@@ -27,15 +32,17 @@ const ProductSchema = new mongoose.Schema({
         required: true
     },
     oldPrice: {
-        type: Number
+        type: Number,
+        default: null
     },
     images: [String],
     rate: {
-        type: Number
+        type: Number,
+        default: null
     },
     state: {
         type: String,
-        required: true
+        default: "new-arrival"
     },
     countInStock: {
         type: Number,

@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const {
     getAllUsers,
+    getUsersStatistics,
     getSingleUser,
     createNewUser,
     loginUser,
@@ -15,6 +16,9 @@ const { protect, adminProtect } = require("../middleware/authMiddleware");
 // get all users
 router.get("/", adminProtect, getAllUsers);
 
+
+// Get users' status
+router.get("/statistics", adminProtect, getUsersStatistics)
 
 // get single user
 router.get("/me", protect, getSingleUser);
